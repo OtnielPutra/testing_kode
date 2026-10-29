@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd"
+             version="3.0">
+    <persistence-unit name="prismaPU" transaction-type="RESOURCE_LOCAL">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+        <class>com.prisma.model.BaseEntity</class>
+        <class>com.prisma.model.Pengguna</class>
+        <class>com.prisma.model.Admin</class>
+        <class>com.prisma.model.PetugasJadwal</class>
+        <class>com.prisma.model.PetugasKonten</class>
+        <class>com.prisma.model.ProgramTv</class>
+        <class>com.prisma.model.Kanal</class>
+        <class>com.prisma.model.Mitra</class>
+        <class>com.prisma.model.KerjaSama</class>
+        <class>com.prisma.model.Konten</class>
+        <class>com.prisma.model.LampiranKonten</class>
+        <class>com.prisma.model.PublikasiKonten</class>
+        <class>com.prisma.model.JadwalTayang</class>
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+
+        <properties>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
+            <!-- skema sudah dibuat dari Prisma_tv.sql, Hibernate tidak boleh mengubahnya -->
+            <property name="hibernate.hbm2ddl.auto" value="none"/>
+            <property name="hibernate.show_sql" value="false"/>
+        </properties>
+    </persistence-unit>
+</persistence>
